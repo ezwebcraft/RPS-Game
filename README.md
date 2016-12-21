@@ -30,4 +30,4 @@
  
              ---------------------------------------------------------------------
 
-### to play choose rock paper or scissors  
+### To play choose rock paper or scissors  
