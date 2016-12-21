@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# Basic game in Python
 
 import random
 import time
@@ -53,15 +54,15 @@ def start():
 
 
 def rps_game():
-    player = "move"
+    player = turns()
     computer = random.randint(1, 3)
-    # results
-    # return
+    result(player, computer)
+    return play_again()
 
 def turns():
     while True:
         print()
-        player = input("Rock = 1 \nPaper = 2 \nScissors = 3\n Pick one:")
+        player = raw_input("Rock = 1 \nPaper = 2 \nScissors = 3\n Pick onei\n: ")
         try:
             player = int(player)
             if player in (1, 2, 3):
@@ -70,6 +71,31 @@ def turns():
             pass
         print ("Please choose a correct number")
 
+def result(player, npc):
+    print("number 1 !!!")
+    time.sleep(1)
+    print("number 2 !!!")
+    time.sleep(1)
+    print("number 3 !!!")
+    time.sleep(0.5)
+    print("NPC throw a {0}".format(name[npc]))
+    global player_points, npc_points
+    if player == npc:
+        print("tie score")
+    else:
+        if rules[player] == npc:
+            print("scored!!!!")
+            player_points += 1
+        else:
+            print("NPC scored !!!" )
+            npc_points += 1
+
+def play_again():
+    try_again = input("would you like to try again ??? \n: ")
+    if try_again in ("y","Y","Yes","yes"):
+        return try_again
+    else:
+        print("Thank you for playing :)")
 
 
 def scores():
